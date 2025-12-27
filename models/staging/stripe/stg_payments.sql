@@ -9,7 +9,7 @@ transformed as (
     select 
 
         id as payment_id,
-        round(amount/100.0,2) as payment_amount,
+        {{cents_to_dollars("amount",6)}} as payment_amount,
         paymentmethod as payment_method,
         status as payment_status,
         orderid as order_id,
